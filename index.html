@@ -10,7 +10,6 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="icon" type="image/png" href="favicon/favicon.ico" sizes="16x16">	
 	<title>Autooazis</title>
-<!-- 	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script> -->
 </head>
 
 <body>
@@ -28,9 +27,10 @@
 							<img src="img/logo.svg" alt="" />
 						</a>
 					</div>
-					<div class="right">
+					<div class="right" id="resp_nav">
+						<button type="button" class="close_nav"></button>
 						<div class="inline">
-							<div>
+							<div class="hidden_1240">
 								<p>пр-т 100 лет Владивостоку, 156, автоцентр «Авто Оазис»</p>
 							</div>
 							<div>
@@ -40,12 +40,13 @@
 								<a class="tel_link" href="tel:84232099600">8 (423) 20-99-600</a>
 							</div>
 							<div>
-								<a class="tel_link" href="tel:84232099600">8 (423) 20-99-600</a>
+								<a class="tel_link" href="tel:84232338650">8 (423) 23-38-650</a>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+			<button type="button" class="respmenubtn"></button>
 		</div>								
 	</header>
 
@@ -71,7 +72,7 @@
 								<div class="right">
 									<div class="button_wrapp">
 										<p>пр-т 100 лет Владивостоку, 156, автоцентр «Авто Оазис»</p>
-										<button type="button" class="yellow_pill">Подробнее</button>
+										<button type="button" class="yellow_pill" data-popup-link="popup_1">Подробнее</button>
 									</div>
 								</div>
 							</div>
@@ -95,7 +96,7 @@
 								<div class="right">
 									<div class="button_wrapp">
 										<p>пр-т 100 лет Владивостоку, 156, автоцентр «Авто Оазис»</p>
-										<button type="button" class="yellow_pill">Подробнее</button>
+										<button type="button" class="yellow_pill" data-popup-link="popup_1">Подробнее</button>
 									</div>
 								</div>
 							</div>
@@ -163,7 +164,7 @@
 				</div>
 				<div class="callback_wrapp animate fadeInUp">
 					<p>Предложение действительно до 01.05.2021</p>
-					<button type="button" class="yellow_pill">записаться</button>
+					<button type="button" class="yellow_pill" data-popup-link="popup_1">записаться</button>
 				</div>
 			</div>
 		</section>
@@ -194,7 +195,7 @@
 				</div>
 				<div class="callback_wrapp dark animate fadeInUp">
 					<p>Предложение действительно до 01.05.2021</p>
-					<button type="button" class="yellow_pill">записаться</button>
+					<button type="button" class="yellow_pill" data-popup-link="popup_1">записаться</button>
 				</div>
 			</div>
 		</section>
@@ -260,6 +261,39 @@
 	<!-- /Footer -->
 
 	</div>
+
+	<!-- Popups -->
+	<div class="popup popup_sect" data-popup = "popup_1">		
+		<div class="popup_content">
+			<button type="button" class="close_popup"></button>
+			<div class="popup_title">
+				<h3>Консультация специалиста</h3>
+				<p>Укажите ваши данные. Наш специалист перезвонит Вам в течение 15 минут</p>
+			</div>
+			<div class="form_popup_wrapp">
+				<form>
+					<div class="input_wrapp">
+						<input type="text" name="name" placeholder="Ваше Имя" />
+					</div>
+					<div class="input_wrapp">
+						<input type="tel" name="tel" placeholder="Ваш телефон" />
+					</div>
+					<div class="input_wrapp">
+						<input type="email" name="email" placeholder="Ваш email" />
+					</div>
+					<div class="submit_wrapp">
+						<button type="submit" class="yellow_pill subBtnCh">отправить</button>
+					</div>
+					<div class="checkbox_wrapp">
+						<label><input type="checkbox" class="conf_ch" name="#" checked >Согласен с <a href="#">Политикой конфиденциальности</a></label>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="popup_bg"></div>
+	<a href="#" class="succesPopupLink" data-popup-link="popup_2"></a>
+	<!-- /Popups -->
 
 	<link rel="stylesheet" type="text/css" href="responsive.css">
 	<link rel="stylesheet" type="text/css" href="slick/slick.css">

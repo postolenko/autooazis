@@ -6,6 +6,18 @@ function getAnimation() {
   });
 }
 
+function getHeaderParams() {
+  if(bodyWidth <= 767) {
+    if($(document).scrollTop() > 5) {
+      $(".header_site").addClass("bg");
+    } else {
+      $(".header_site").removeClass("bg");
+    }
+  } else {
+    $(".header_site").removeClass("bg");
+  }
+}
+
 var w = window,
 d = document,
 e = d.documentElement,
@@ -14,22 +26,23 @@ bodyWidth = w.innerWidth || e.clientWidth || g.clientWidth;
 
 
 $(window).load(function() {
-
-
-
+  getAnimation();
 });
 
 $(window).resize(function() {
+  bodyWidth = w.innerWidth || e.clientWidth || g.clientWidth;
   getAnimation();
+  getHeaderParams();
 });
 
 $(document).scroll(function() {
   getAnimation();
+  getHeaderParams();
 });
 
 $(document).ready(function() {
 
-    getAnimation();
+    getHeaderParams();
 
     if( $(".promo_slider").length > 0 ) {
         $(".promo_slider").not(".slick-initialized").slick({
@@ -135,5 +148,55 @@ $(document).ready(function() {
         }
       }
     });
+
+    // ----------
+
+    $(".conf_ch").each(function() {
+      parentBlock = $(this).closest("form");
+      submitBtn = parentBlock.find("[type='submit']");
+      if($(this).is(":checked")) {
+        submitBtn.addClass("visible");
+      } else {
+        submitBtn.removeClass("visible");
+      }
+    });
+
+    $(".conf_ch").change(function() {
+      parentBlock = $(this).closest("form");
+      submitBtn = parentBlock.find("[type='submit']");
+      if($(this).is(":checked")) {
+        submitBtn.addClass("visible");
+      } else {
+        submitBtn.removeClass("visible");
+      }
+    });
+
+    // -----------
+
+    $(".respmenubtn").click(function(e) {
+      e.preventDefault();
+      if( $("#resp_nav").is(":hidden") ) {
+          $("#resp_nav").fadeIn(300);
+          $(this).addClass("active");
+      } else {
+          $("#resp_nav").fadeOut(300);
+          $(this).removeClass("active");
+      }
+    });
+
+    $(".close_nav").click(function(e) {
+      e.preventDefault();
+      $("#resp_nav").fadeOut(300);
+    });
+    
+    $(this).keydown(function(eventObject){
+        if (eventObject.which == 27 &&
+            $("#resp_nav").is(":visible") &&
+            bodyWidth <= 700) {
+                $("#resp_nav").fadeOut(300);
+                $(".respmenubtn").removeClass("active");
+        }
+    });
+
 
 });

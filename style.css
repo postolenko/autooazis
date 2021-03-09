@@ -332,6 +332,10 @@ textarea:focus {
     z-index: 3;
 }
 
+.visible_700 {
+    display: none;
+}
+
 /*-- Slick --*/
 
 .slick-dots {

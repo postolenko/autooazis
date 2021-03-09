@@ -550,6 +550,10 @@
 	    line-height: 38px;
 	}
 
+	.visible_700 {
+	    display: block;
+	}
+
 	/*-- Header --*/
 
 	.header_site {
@@ -607,6 +611,10 @@
 	.aticle_1 p {
 	    font-size: 17px;
 	    line-height: 31px;
+	}
+
+	.resp_adres {
+		padding-top: 30px;
 	}
 
 	/*-- /Header --*/
